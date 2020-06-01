@@ -1,11 +1,17 @@
 {
   "name": "netlify-plugin-hugo-cache-resources",
-  "version": "1.0.0",
-  "description": "",
+  "version": "0.1.1",
+  "description": "Persist the Hugo resources folder between Netlify builds for huge build speed improvements!",
   "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+  "repository": "https://github.com/cdeleeuwe/netlify-plugin-hugo-cache-resources.git",
+  "bugs": {
+    "url": "https://github.com/cdeleeuwe/netlify-plugin-hugo-cache-resources/issues"
   },
-  "author": "",
-  "license": "ISC"
+  "author": "Cassius de Leeuwe <cassius@cadl.dev>",
+  "license": "MIT",
+  "keywords": [
+    "netlify",
+    "netlify-plugin"
+  ],
+  "dependencies": {}
 }
