@@ -12,6 +12,10 @@ To install, add the following lines to your `netlify.toml` file:
 
 [[plugins]]
   package = "netlify-plugin-hugo-cache-resources"
+
+	[plugins.inputs]
+	# If it should show more verbose logs (optional, default = true)
+	debug = true
 ```
 
 Note: The `[[plugins]]` line is required for each plugin, even if you have other plugins in your `netlify.toml` file already.
