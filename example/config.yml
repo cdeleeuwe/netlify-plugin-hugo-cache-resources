@@ -1,0 +1,9 @@
+title: Netlify plugin hugo cache resources test
+baseURL: /
+
+imaging:
+  quality: 100
+  resampleFilter: Lanczos
+
+params:
+  amount: 500

@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>{{ .Site.Title }}</title>
+  </head>
+  <body>
+    {{ $initial_width := 1920 }}
+
+    {{ range $index, $item := seq .Site.Params.amount }}   
+      {{ $width := sub $initial_width $index }}
+      {{ $img := (resources.Get "image.jpg").Resize (print $width "x") }}
+      <img src="{{ $img.RelPermalink }}" />
+    {{ end }}
+  </body>
+</html>
