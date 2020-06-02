@@ -1,6 +1,6 @@
 {
   "name": "netlify-plugin-hugo-cache-resources",
-  "version": "0.1.3",
+  "version": "0.1.4",
   "description": "Persist Hugo resources folder between Netlify builds for huge build speed improvements!",
   "main": "index.js",
   "repository": "https://github.com/cdeleeuwe/netlify-plugin-hugo-cache-resources.git",
