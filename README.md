@@ -2,6 +2,10 @@
 
 Persist the Hugo resources folder between Netlify builds for huge build speed improvements! ⚡️
 
+This plugin caches the `resources` folder after build. If you are processing many images, this would improve build duration significantly.
+
+Note: Restoring cache only comes from the production branch. So once cache is saved on the production branch, the next preview build would use the cache. For example, when pushing to the same preview build, the latest preview build will not get the cache from the previous preview build, but will get it from master.
+
 ## Usage
 
 To install, add the following lines to your `netlify.toml` file:
@@ -19,5 +23,3 @@ To install, add the following lines to your `netlify.toml` file:
 ```
 
 Note: The `[[plugins]]` line is required for each plugin, even if you have other plugins in your `netlify.toml` file already.
-
-This plugin caches the `resources` folder after build. If you are processing many images, this would improve build duration significantly.
