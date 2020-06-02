@@ -1,6 +1,6 @@
-# Netlify Build Plugin: Persist the Hugo resources Between Builds
+# Netlify Build Plugin: Persist Hugo resources Between Builds
 
-Persist the Hugo resources folder between Netlify builds for huge build speed improvements! ⚡️
+Persist [Hugo](https://gohugo.io/) resources folder between Netlify builds for huge build speed improvements! ⚡️
 
 This plugin caches the `resources` folder after build. If you are processing many images, this would improve build duration significantly.
 
