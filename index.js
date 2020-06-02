@@ -1,14 +1,18 @@
-const getResourcesDir = constants => {
+const getResourcesDir = () => {
   return 'resources';
 }
 
+const printList = (items) => {
+  console.log('---');
+  items.forEach((item, index) => {
+    console.log(`${index + 1}. ${item}`);
+  });
+}
+
 module.exports = {
-  // Restore file/directory cached in previous builds.
-  // Does not do anything if:
-  //  - the file/directory already exists locally
-  //  - the file/directory has not been cached yet
-  async onPreBuild({ utils, constants, inputs }) {
-    const path = getResourcesDir(constants);
+
+  async onPreBuild({ utils, inputs }) {
+    const path = getResourcesDir();
     const success = await utils.cache.restore(path);
 
     if (success) {
@@ -19,13 +23,9 @@ module.exports = {
       console.log(`No cache found for resources folder`);
     }
   },
-  // Cache file/directory for future builds.
-  // Does not do anything if:
-  //  - the file/directory does not exist locally
-  //  - the file/directory is already cached and its contents has not changed
-  //    If this is a directory, this includes children's contents
-  async onPostBuild({ utils, constants, inputs }) {
-    const path = getResourcesDir(constants);
+
+  async onPostBuild({ utils, inputs }) {
+    const path = getResourcesDir();
     const success = await utils.cache.save(path);
 
     if (success) {
@@ -37,10 +37,3 @@ module.exports = {
     }
   }
 };
-
-const printList = (items) => {
-  console.log('---');
-  items.forEach((item, index) => {
-    console.log(`${index + 1}. ${item}`);
-  });
-}
