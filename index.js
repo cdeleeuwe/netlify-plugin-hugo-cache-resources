@@ -1,5 +1,3 @@
-const glob = require('glob');
-
 const getResourcesDir = () => {
   return 'resources';
 }
@@ -28,15 +26,6 @@ module.exports = {
 
   async onPostBuild({ utils, inputs }) {
     const path = getResourcesDir();
-    const resourceFiles = glob.sync(`${path}/**/*`, { nodir: true });
-
-    // Do nothing if there are no files to cache, else it throws an error
-    // Workaround for https://github.com/netlify/build/issues/1411
-    if (resourceFiles.length == 0) {
-      console.log(`No resources files to cache`);
-      return;
-    }
-
     const success = await utils.cache.save(path);
 
     if (success) {
