@@ -12,6 +12,7 @@ HUGO_ENABLEGITINFO = "true"
 package = "../"
   [plugins.inputs]
   debug = true
+  srcdir = "path/to/website"
 
 [[plugins]]
 package = "@netlify/plugin-local-install-core"
