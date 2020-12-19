@@ -20,6 +20,8 @@ To install, add the following lines to your `netlify.toml` file:
 	[plugins.inputs]
 	# If it should show more verbose logs (optional, default = true)
 	debug = true
+	# Relative path to source directory in case you use Hugo's "--s" option
+	srcdir = "path/to/website"
 ```
 
 Note: The `[[plugins]]` line is required for each plugin, even if you have other plugins in your `netlify.toml` file already.
