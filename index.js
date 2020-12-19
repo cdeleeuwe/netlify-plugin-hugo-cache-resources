@@ -1,5 +1,7 @@
-const getResourcesDir = () => {
-  return 'resources';
+const { join } = require("path");
+
+const getResourcesDir = ({ inputs }) => {
+  return join(inputs.srcdir, 'resources');
 }
 
 const printList = (items) => {
@@ -12,8 +14,9 @@ const printList = (items) => {
 module.exports = {
 
   async onPreBuild({ utils, inputs }) {
-    const path = getResourcesDir();
+    const path = getResourcesDir({ inputs });
     const success = await utils.cache.restore(path);
+    console.log(`Checking if resources exist at "${path}"`);
 
     if (success) {
       const cachedFiles = await utils.cache.list(path);
@@ -25,7 +28,7 @@ module.exports = {
   },
 
   async onPostBuild({ utils, inputs }) {
-    const path = getResourcesDir();
+    const path = getResourcesDir({ inputs });
     const success = await utils.cache.save(path);
 
     if (success) {
