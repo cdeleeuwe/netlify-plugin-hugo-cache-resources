@@ -6,4 +6,4 @@ imaging:
   resampleFilter: Lanczos
 
 params:
-  amount: 500
+  amount: 10
