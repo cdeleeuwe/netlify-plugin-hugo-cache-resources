@@ -16,7 +16,7 @@ module.exports = {
   async onPreBuild({ utils, inputs }) {
     const path = getResourcesDir({ inputs });
     const success = await utils.cache.restore(path);
-    console.log(`Checking if resources exist at ${path}`);
+    console.log(`Checking if resources exist at "${path}"`);
 
     if (success) {
       const cachedFiles = await utils.cache.list(path);
