@@ -8,7 +8,9 @@ Note: Restoring cache only comes from the production branch. So once cache is sa
 
 ## Usage
 
-To install, add the following lines to your `netlify.toml` file:
+You can install this plugin in the Netlify UI from this [direct in-app installation link](https://app.netlify.com/plugins/netlify-plugin-hugo-cache-resources/install) or from the [Plugins directory](https://app.netlify.com/plugins).
+
+For file-based installation, add the following lines to your `netlify.toml` file:
 
 ```toml
 [build]
@@ -25,3 +27,9 @@ To install, add the following lines to your `netlify.toml` file:
 ```
 
 Note: The `[[plugins]]` line is required for each plugin, even if you have other plugins in your `netlify.toml` file already.
+
+To complete file-based installation, from your project's base directory, use npm, yarn, or any other Node.js package manager to add the plugin to `devDependencies` in `package.json`.
+
+```bash
+npm install -D netlify-plugin-hugo-cache-resources
+```
