@@ -4,8 +4,6 @@ Persist [Hugo](https://gohugo.io/) resources folder between Netlify builds for h
 
 This plugin caches the `resources` folder after build. If you are processing many images, this would improve build duration significantly.
 
-Note: Restoring cache only comes from the production branch. So once cache is saved on the production branch, the next preview build would use the cache. For example, when pushing to the same preview build, the latest preview build will not get the cache from the previous preview build, but will get it from master.
-
 ## Usage
 
 You can install this plugin in the Netlify UI from this [direct in-app installation link](https://app.netlify.com/plugins/netlify-plugin-hugo-cache-resources/install) or from the [Plugins directory](https://app.netlify.com/plugins).
