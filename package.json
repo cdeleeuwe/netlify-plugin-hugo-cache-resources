@@ -13,5 +13,7 @@
     "netlify",
     "netlify-plugin"
   ],
-  "dependencies": {}
+  "dependencies": {
+    "glob": "^7.1.7"
+  }
 }
